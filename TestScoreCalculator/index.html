@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test Score Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <img src="../MenuIcon.png" alt="MenuIcon" width="50px" height="50px" style="float: left;" id="open-menu">
+
+        <div id="menu-bar" hidden style="user-select: none;">
+            <p class="menu-item" style="font-size: 30px;"><b>Wordplay</b></p>
+            <p class="menu-item">|</p>
+            <p class="menu-item" id="website-menu-hover">Websites</p>
+        </div>
+
+
+
+
+        <div id="Header">
+            <h1 id="Header-h1">Score Calculator</h1>
+            <hr>
+            <div id="Header-content-head">
+                <h2 id="Header-content-prompt">Please enter your average in the class</h2>
+                <div id="Header-content-avg-input">
+                    <input type="text" inputmode="numeric" class="text-input" id="avg-text-input" maxlength="5"> <label id="Percent-Label" for="%">%</label>
+                </div>
+            </div>
+            <div id="Header-content-head">
+                <h2 id="Header-content-prompt">Please enter how much of your final grade this test is worth</h2>
+                <div id="Header-content-avg-input">
+                    <input type="text" inputmode="numeric" class="text-input" id="percent-worth-text-input" maxlength="5"> <label id="Percent-Label" for="%">%</label>
+                </div>
+            </div>
+
+            <div id="Header-content-head">
+                <h2 id="Header-content-prompt">Please enter the final grade you'd like to get</h2>
+                <div id="Header-content-avg-input">
+                    <input type="text" inputmode="numeric" class="text-input" id="fg-text-input" maxlength="5"> <label id="Percent-Label" for="%">%</label>
+                </div>
+            </div>
+            <br><br>
+            <hr>
+
+            <div id="ResultClick" onclick="CalculateResult()">
+                <button type="button" >Calculate Score</button>
+            </div>
+
+            <div>
+                <p id="result"></p>
+            </div>
+
+
+        </div>
+
+        <div id="websites-show" hidden>
+            <a href="../Wordle/index.html" class="link">Wordle |</a>
+            <a href="../TestScoreCalculator/index.html" class="link">Test Score Calculator |</a>
+        </div>
+
+        <!-- Var storing-->
+        <div hidden>
+            <var id="Final-Score">fin</var>
+        </div>
+        
+        
+        <script src="main.js" async defer></script>
+    </body>
+</html>
