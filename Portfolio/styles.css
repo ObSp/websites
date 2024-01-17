@@ -3,7 +3,7 @@ body {
     padding: 0;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(35, 35, 35);
 }
 
 #welcome-section {
@@ -29,10 +29,56 @@ h1 {
     margin-bottom: -2%;
 }
 
+#skills {
+    text-align: center;
+}
 
 #left-welcome-text {
+    background: -webkit-linear-gradient(90deg, #ffffff 0%, #000000 100%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     margin: auto;
     font-size: 32px;
+    font-weight: bold;
+}
 
+
+#skills-list {
+    list-style: none;
+}
+
+.skills-item {
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #26262696;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 1%;
+    height: 5%;
+    width: fit-content;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 5%;
+}
+
+
+
+
+
+
+.blue-gradient {
+    background-color: #000000;
+    background: linear-gradient(to right, #0455CF 11%, #30E3FF 100%);
+}
+
+.green-gradient {
+    background: linear-gradient(to right, #4BCF1B 11%, #1CFFBB 100%);
+}
+
+
+.pink-gradient {
+    background: linear-gradient(to right, #4c06cf 0%, #DE0AFF 100%);
 }
