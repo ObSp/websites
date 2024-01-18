@@ -4,6 +4,7 @@ body {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(35, 35, 35);
+    user-select: none;
 }
 
 #welcome-section {
@@ -34,7 +35,7 @@ h1 {
 }
 
 #left-welcome-text {
-    background: -webkit-linear-gradient(90deg, #ffffff 0%, #000000 100%);
+    background: -webkit-linear-gradient(180deg, #ffffff 0%, #c2c2c2 100%);
     background-clip:text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -62,15 +63,54 @@ h1 {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 5%;
+    transition: background-color 2s ease-out 100ms;
+}
+
+.skills-item:hover {
+    background: white;
+    color: black;
+}
+
+
+#skills-header {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: -5%;
 }
 
 
 
 
+.blue-text-gradient {
+    background: linear-gradient(to right, #0455CF 0%, #30E3FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.green-text-gradient {
+    background: linear-gradient(to right, #4BCF1B 11%, #1CFFBB 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+    background: linear-gradient(to right, #4c06cf 0%, #DE0AFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.light-green-text-gradient {
+    background: linear-gradient(to right, #0BA100 0%, #45D4FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 
 .blue-gradient {
-    background-color: #000000;
     background: linear-gradient(to right, #0455CF 11%, #30E3FF 100%);
 }
 
@@ -81,4 +121,9 @@ h1 {
 
 .pink-gradient {
     background: linear-gradient(to right, #4c06cf 0%, #DE0AFF 100%);
+}
+
+
+.light-green-gradient {
+    background: linear-gradient(to right, #0BA100 0%, #45D4FF 100%);
 }
