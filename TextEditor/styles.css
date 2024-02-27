@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.087);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(219, 219, 219)
+}
+
+#page-body {
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 60%;
+}
+
+
+#input-area {
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 98.9%;
+    resize: none;
+    border: none;
+}
+
+#input-area:focus{
+    border-style: none;
+    outline: none;
+}

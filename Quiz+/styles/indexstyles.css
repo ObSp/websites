@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*color: rgba(255, 255, 255, 0.087);*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(255, 255, 255)
+}
+
+.quizp-header {
+    margin-top: -.5%;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #3362f0 -1%, #cf12b3 0%, #CF913B 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 450%;
+}
+
+#set-name-input{
+    margin-bottom: -100%;
+    text-align: center;
+    margin: auto;
+}
+
+#set-name-input > input {
+    margin-top: 10%;
+    text-align: center;
+}
