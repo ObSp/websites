@@ -8,11 +8,20 @@
         <link rel="stylesheet" href="styles/indexstyles.css">
     </head>
     <body>
-        <h1 class="quizp-header">Quiz+</h1>
+        <h1 class="quizp-header">Quiz+</h1><hr style="margin-top: -3%;">
 
 
         <div id="set-name-input">
-            <input placeholder="Enter Study Set Name" id="set-name-input-real">
+            <input id="open-set" type="file"><br>
+            <input type="button" value="Study" id="study-set" accept=".txt">
+        </div>
+
+
+        <div id="study-container" hidden>
+            <p id="term">Term here</p>
+            <input type="text" id="answer" placeholder="Definition">
+            <input type="button" value="Check Answer" id="check-button">
+            <p id="right-or-wrong"></p>
         </div>
         
        
