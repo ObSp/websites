@@ -24,6 +24,12 @@ function awaitClick(button){
     });
 }
 
+function wait(ms){
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms)
+    });
+}
+
 
 
 function getItemsList(rawContent){
@@ -38,14 +44,24 @@ function getItemsList(rawContent){
     return returnList
 }
 
+function evaluateAnswer(answer, pair){
+    let score = 0
+    for (const word of answer.split(" ")){
+        if (word in pair.definition) score++;
+    }
+
+    score = (score/pair.definition.length)*100
+    return score
+}
+
 async function study(setContent){
+    //hide stuff
     document.getElementById("set-name-input").hidden = true
     document.getElementById("study-container").hidden = false
 
 
     let items = getItemsList(setContent)
     
-
     //randomize items
     for (let i = items.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -56,6 +72,10 @@ async function study(setContent){
     for (const item of items){
         termdisplay.innerHTML = item.term
         await awaitClick(checkanswerbutton)
+        if (evaluateAnswer(definitionInput.ariaValueMax, item) > 60){
+            console.log("aha")
+            await wait(100000)
+        }
     }
 }
 
