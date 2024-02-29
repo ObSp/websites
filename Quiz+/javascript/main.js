@@ -7,6 +7,8 @@ let termdisplay = document.getElementById('term')
 let definitionInput = document.getElementById('answer')
 let checkanswerbutton = document.getElementById('check-button')
 
+let feedbackDisplay = document.getElementById('right-or-wrong')
+
 
 class Item {
     constructor(term, definition){
@@ -23,6 +25,25 @@ function awaitClick(button){
         button.addEventListener('click', resolve)
     });
 }
+
+function awaitKeyPress(key){
+    return new Promise((resolve, reject) => {
+        document.onkeydown = function(e){
+            console.log(e.key)
+        }
+    });
+}
+
+function answered(){
+    return new Promise((resolve, reject) => {
+        checkanswerbutton.addEventListener('click', resolve)
+
+        document.onkeydown = function(e){
+            if (e.key=="Enter") resolve()
+        }
+    });
+}
+
 
 function wait(ms){
     return new Promise((resolve) => {
@@ -47,10 +68,10 @@ function getItemsList(rawContent){
 function evaluateAnswer(answer, pair){
     let score = 0
     for (const word of answer.split(" ")){
-        if (word in pair.definition) score++;
+        if (pair.definition.includes(word)) score++;
     }
 
-    score = (score/pair.definition.length)*100
+    score = (score/pair.definition.split(" ").length)*100
     return score
 }
 
@@ -71,11 +92,16 @@ async function study(setContent){
 
     for (const item of items){
         termdisplay.innerHTML = item.term
-        await awaitClick(checkanswerbutton)
-        if (evaluateAnswer(definitionInput.ariaValueMax, item) > 60){
-            console.log("aha")
-            await wait(100000)
+        await answered()
+        const score = evaluateAnswer(definitionInput.value, item)
+        console.log(score)
+        if (score > 60){
+            console.log("crt!")
+            feedbackDisplay.innerHTML = "<span "
         }
+
+
+        await wait(10000)
     }
 }
 
