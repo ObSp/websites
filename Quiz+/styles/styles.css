@@ -37,3 +37,12 @@ body {
 #header {
     background-color: rgba(0, 0, 0, 0.292);
 }
+
+
+.right {
+    color: rgb(0, 180, 0);
+}
+
+.wrong {
+    color: rgb(229, 68, 87);
+}

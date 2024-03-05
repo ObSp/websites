@@ -94,14 +94,29 @@ async function study(setContent){
         termdisplay.innerHTML = item.term
         await answered()
         const score = evaluateAnswer(definitionInput.value, item)
-        console.log(score)
         if (score > 60){
-            console.log("crt!")
-            feedbackDisplay.innerHTML = "<span "
+            feedbackDisplay.innerHTML = "<span class='right'>Correct!</span>"
+
+            await wait(1000)
+            feedbackDisplay.innerHTML = ""
+            continue
         }
 
+        //--WRONG--//
+        feedbackDisplay.innerHTML = "<span class='wrong'>Incorrect! The correct answer was "+item.definition+", please enter it to continue</span>"
 
-        await wait(10000)
+        while (true){
+            await answered()
+
+            if (definitionInput.value == item.definition) break
+
+            feedbackDisplay.innerHTML = "<span class='wrong'>Please enter the correct definition: "+item.definition+"</span>"
+        }
+
+        feedbackDisplay.innerHTML = "<span class='wrong'>Correct</span>"
+        await wait(1000)
+        feedbackDisplay.innerHTML = ""
+
     }
 }
 
