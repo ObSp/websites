@@ -74,7 +74,7 @@ h1 {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 5%;
-    transition: all 1s ease-out 100ms;
+    transition: all 1s ease-in 100ms;
 }
 
 .skills-item:hover {
