@@ -13,7 +13,7 @@ body {
     height: fit-content;
     color: white;
     margin-top: 0px;
-    background-image: url('welcome-background.png');
+    background-image: url('Media/welcome-background.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -22,10 +22,18 @@ body {
     width: 100%;
     height: fit-content;
     background-position: center top;
-    background-image: url('why-me-backround.png');
+    background-image: url('Media/why-me-backround.png');
     background-repeat: no-repeat;
     background-size:cover;
     text-align: center;
+}
+
+#experience-section {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    background: rgb(125,14,157);
+    background: radial-gradient(circle, rgba(125,14,157,1) 0%, rgba(0,0,0,1) 53%, rgba(80,0,158,1) 100%);
 }
 
 #nav-menu {
@@ -87,6 +95,32 @@ h1 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: -5%;
+}
+
+.align-left {
+    margin-left: -50%;
+}
+
+.experience-item {
+    border-style: none;
+    
+}
+
+.experience-header {
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.flex-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: text-top;
+}
+
+.flex-inside-section {
+    width: 50%;
+    height: 100%;
 }
 
 
