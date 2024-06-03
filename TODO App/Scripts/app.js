@@ -38,6 +38,13 @@ function retrieveStoredList(key){
 
 function createItem(){
     const item = new TodoItem("Do something");
+
+    todolist.addTodoItem(item);
+
+    item.OnDeleteRequest(()=>{
+        item.textNode.innerHTML = "a"
+        todolist.removeTodoItem(item)
+    });
 }
 
 
