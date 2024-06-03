@@ -1,7 +1,6 @@
 import { TodoItem } from "./Classes/TodoItem.js";
 import { TodoList } from "./Classes/TodoList.js";
 
-
 const CurrentTimeDisp = document.getElementById("cur-time");
 const dateDisp = document.getElementById("date");
 const footer = document.getElementById("doc-footer");
@@ -14,6 +13,7 @@ const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat
 const todolist = new TodoList(document.getElementById("todo-list-section"))
 
 function updateTime(){
+    saveTodoList();
     const curTime = new Date();
     const hour = curTime.getHours();
     let mins = curTime.getMinutes();
@@ -29,11 +29,13 @@ function updateTime(){
 }
 
 function saveTodoList(key){
-
+    localStorage.setItem(key, "hello");
+    console.log(localStorage.getItem(key));
 }
 
 function retrieveStoredList(key){
-    const list = JSON.parse(localStorage.getItem(key));
+    const list = localStorage.getItem(key);
+    console.log(list)
 }
 
 function createItem(){
@@ -48,10 +50,14 @@ function createItem(){
 }
 
 
+
+retrieveStoredList(KEY);
+
 updateTime();
 
 window.addEventListener("befureunload", e=>{
-    localStorage.setItem(KEY, todolist.items);
+    console.log(JSON.stringify(todolist.items))
+    saveTodoList(KEY);
 });
 
 footer.addEventListener("click", createItem);
