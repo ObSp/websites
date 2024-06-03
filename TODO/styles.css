@@ -120,17 +120,33 @@ body {
     position: relative;
 
     p{
-        margin-top: -3.3vh;
-        margin-left: 5vh;
+        position: relative;
+
+        top: 12%;
+        left: max(7%, 40px);
+
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);   
+
+        font-size: 2vh;
     }
 
-    img {
+    img { /*trash button*/
+        display: inline;
+
+        position: relative;
+
         width: 3vh;
 
         float: right;
 
-        margin-top: -4.3vh;
-        margin-right: 1vh;
+        top: -65%;
+        right: 1%;
+
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%); 
+
+        
     }
 
 }
@@ -139,11 +155,18 @@ body {
     display: inline-block;
     margin: 0;
 
-    margin-left: 1vh;
-    margin-top: 1vh;
+    position: absolute;
+
+    left: max(3.5%, 20px);
+    top: 50%;
+
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     width: 3vh;
     height: 3vh;
+
+    background-color: white;
 
     border-style: solid;
     border-color: rgb(154, 154, 154);
@@ -155,7 +178,7 @@ body {
 }
 
 .circle:hover {
-    margin-top: .5vh;
+    top: 40%;
     background-color: rgba(93, 209, 67, 0.349);
 }
 
