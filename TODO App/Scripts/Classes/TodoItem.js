@@ -17,6 +17,7 @@ export class TodoItem{
         this.node = document.createElement("div");
         this.node.className = "todo-item";
 
+
         this.circleNode = document.createElement("div")
         this.circleNode.className = "circle";
         this.node.appendChild(this.circleNode);
@@ -25,19 +26,34 @@ export class TodoItem{
         this.textNode.innerHTML = this.todo;
         this.node.appendChild(this.textNode);
 
+        if (this.todo == ""){
+            this.textNode.innerHTML = "Buy milk"
+        }
+
         this.trashNode = document.createElement("img");
         this.trashNode.src = "Media/Delete.png";
         this.node.appendChild(this.trashNode);
 
         this.ondelete = null;
+        this.oncomplete = null;
+
+        this.Complete = false;
 
         this.trashNode.addEventListener("click", ()=>{
             if (this.ondelete != null) this.ondelete();
+        });
+
+        this.circleNode.addEventListener("click", ()=>{
+            if (this.oncomplete != null) this.oncomplete();
         });
     }
 
     OnDeleteRequest(f){
         this.ondelete = f;
+    }
+
+    OnCompleteRequest(f){
+        this.oncomplete = f;
     }
 
     destroy(){

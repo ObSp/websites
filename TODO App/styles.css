@@ -216,16 +216,23 @@ body {
 
     background-color: rgb(255, 255, 255);
 
-    width: 50vw;
+    width: fit-content;
     height: max-content;
 
-    left: 25%;
+    max-width: 500px;
+
+    left: 50%;
+
+    top: 50%;
+
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     z-index: 5;
 }
 
 #popup-header {
-    width: 50vw;
+    width: 100%;
     height: max-content;
 
     background-color: rgb(37,40,49);
@@ -252,7 +259,7 @@ body {
 }
 
 #popup-input {
-    width: 50vw;
+    width: 100%;
     height: 4vh;
 
     margin-top: 1vh;
@@ -262,6 +269,7 @@ body {
     padding: 0;
 
     text-align: center;
+    font-size: 1.5vh;
 
     border-style: none;
 
@@ -274,10 +282,41 @@ body {
 }
 
 #popup-button-container{
-    width: 50vw;
+    width: 100%;
     height: 5vh;
 
-    background-color: aqua;
+    background-color: rgb(37,40,49);
+}
+
+#popup-confirm {
+    float: left;
+    background-color: rgb(52, 204, 93);
+}
+
+#popup-cancel {
+    float: right;
+    background-color: rgb(255, 0, 98);
+}
+
+.popup-button {
+    user-select: none;
+
+    width: 50%;
+    height: 5vh;
+    background-color: wheat;
+
+    color: white;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 2.5vh;
+
+    margin: 0;
+
+    transition: all .2s;
+}
+
+.popup-button:hover {
+    height: 4.6vh;
 }
 
 #screen-darken{
