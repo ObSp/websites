@@ -1,3 +1,3 @@
-import { run } from "./modules/welcomeCodeWindow";
+import { init } from "./modules/dropdownArrows.js";
 
-run()
+init()

@@ -8,10 +8,11 @@ body {
     margin: 0;
 
     overflow-x: hidden;
-    overflow-y: hidden;
 
     font-family: Pixelated;
 }
+
+/*WELCOME*/
 
 #welcome-section {
     width: 100vw;
@@ -48,17 +49,68 @@ body {
     font-size: 14vh;
 }
 
-.welcome-code-window-max {
-    width: 40vw;
+/*ABOUT ME*/
 
-    position: relative;
-
-    left: calc(100vw - 50vw);
-    bottom: 15vh;
-
-    filter: drop-shadow(30px 10px 10px #0e0f10);
+#about-me-section {
+    width: 100vw;
+    height: fit-content;
 }
 
-.welcome-code-window-min {
+#about-me-open {
+    width: 100vw;
+    height: fit-content;
 
+    background-color: #7884d1;
+
+    text-align: center;
+
+    h1 {
+        margin: 0;
+        color: white;
+
+        font-size: 8vh;
+    }
+
+    img {
+        margin-top: -2vh;
+
+        mix-blend-mode: difference;
+
+        width: 5vh;
+    }
 }
+
+/*PAST WORK*/
+
+#past-work-section {
+    width: 100vw;
+    height: fit-content;
+}
+
+#past-work-open {
+    width: 100vw;
+    height: fit-content;
+
+    background-color: #87d8b1;
+
+    text-align: center;
+
+    h1 {
+        margin: 0;
+        color: white;
+
+        font-size: 8vh;
+    }
+
+    img {
+        margin-top: -2vh;
+
+        mix-blend-mode: difference;
+
+        width: 5vh;
+    }
+}
+
+
+
+/*FOR NEXT SECTION USE #e98895 */
