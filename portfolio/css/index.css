@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Pixelated;
+    src: url("../media/Fonts/Pixelated.ttf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    font-family: Pixelated;
+}
+
+#welcome-section {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../media/Background.png");
+    background-repeat: no-repeat;
+    background-size: calc(120vh * (661/306)) 120vh;
+    background-position-x: 50%;
+
+    background-color: rgb(40, 35, 59);
+}
+
+#profile-pic {
+    width: 15vh;
+
+    position: relative;
+
+    top: calc(100% - 17vh);
+    left: 20px;
+
+    border-radius: 100%;
+}
+
+#name-text {
+    color: white;
+
+    position: relative;
+    left: calc(20px + 19vh);
+    top: calc(100% - 48vh);
+
+    text-anchor:start;
+
+    font-size: 14vh;
+}
+
+.welcome-code-window-max {
+    width: 40vw;
+
+    position: relative;
+
+    left: calc(100vw - 50vw);
+    bottom: 15vh;
+
+    filter: drop-shadow(30px 10px 10px #0e0f10);
+}
+
+.welcome-code-window-min {
+
+}
