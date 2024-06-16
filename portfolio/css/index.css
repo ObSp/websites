@@ -49,6 +49,16 @@ body {
     font-size: 14vh;
 }
 
+/*Section wide stuff*/
+.dropdown-arrow {
+    transition: all .5s;
+}
+
+.dropdown-arrow:hover {
+    padding-top: 2vh;
+}
+
+
 /*ABOUT ME*/
 
 #about-me-section {
@@ -111,6 +121,35 @@ body {
     }
 }
 
+/*CONTACT*/
 
+#past-work-section {
+    width: 100vw;
+    height: fit-content;
+}
+
+#past-work-open {
+    width: 100vw;
+    height: fit-content;
+
+    background-color: #87d8b1;
+
+    text-align: center;
+
+    h1 {
+        margin: 0;
+        color: white;
+
+        font-size: 8vh;
+    }
+
+    img {
+        margin-top: -2vh;
+
+        mix-blend-mode: difference;
+
+        width: 5vh;
+    }
+}
 
 /*FOR NEXT SECTION USE #e98895 */
