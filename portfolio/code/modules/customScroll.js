@@ -20,9 +20,9 @@ export function customScroll(){
 
 
 function onUp(){
-    welcome.scrollIntoView()
+    window.scrollTo(0,0)
 }
 
 function onDown(){
-    last.scrollIntoView()
+    window.scrollTo(0, document.body.scrollHeight)
 }
