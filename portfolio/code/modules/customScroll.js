@@ -3,6 +3,7 @@ const last = document.getElementsByClassName("last-section")[0]
 
 
 export function customScroll(){
+    //window.scrollTo(0,0)
     document.documentElement.style.scrollBehavior = "smooth";
     document.body.style.overflowY = "hidden";
 
