@@ -123,16 +123,16 @@ body {
 
 /*CONTACT*/
 
-#past-work-section {
+#contact-section {
     width: 100vw;
     height: fit-content;
 }
 
-#past-work-open {
+#contact-open {
     width: 100vw;
     height: fit-content;
 
-    background-color: #87d8b1;
+    background-color: #e98895;
 
     text-align: center;
 
@@ -151,5 +151,3 @@ body {
         width: 5vh;
     }
 }
-
-/*FOR NEXT SECTION USE #e98895 */

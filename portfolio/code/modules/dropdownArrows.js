@@ -1,3 +1,4 @@
 export function init() {
-    const dropdownArrows = document.getElementById("")
+    const dropdownArrows = document.getElementById("dropdown-arrow")
+    
 }
