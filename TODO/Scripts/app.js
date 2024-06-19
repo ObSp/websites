@@ -1,5 +1,9 @@
 import { TodoItem } from "./Classes/TodoItem.js";
 import { TodoList } from "./Classes/TodoList.js";
+import { GistDatabase } from "./Database.js";
+
+const db = new GistDatabase("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", "41515200e38db0c9f5c4e677e2846477")
+let USERNAME
 
 const CurrentTimeDisp = document.getElementById("cur-time");
 const dateDisp = document.getElementById("date");
@@ -35,13 +39,36 @@ function updateTime(){
     setTimeout(updateTime, 1000);
 }
 
+
+async function exportToDatabase(key, data){
+    db.set(key, data)
+}
+
+function exportToLocalStorage(key, data){
+    localStorage.setItem(key, data)
+}
+
+async function importFromDatabase(key){
+    return await db.get(key)
+}
+
+function importFromLocalStorage(key){
+    return localStorage.getItem(key)
+}
+
 function saveTodoList(){
     //parse items into array
     const arr = [];
     for (const item of todolist.items){
         arr.push(item.todo + (item.Complete ? "-comp" : ""));
     }
-    localStorage.setItem(KEY, JSON.stringify(arr))
+    
+    if (!USERNAME){
+        exportToLocalStorage(KEY, JSON.stringify(arr))
+        return
+    }
+
+    exportToDatabase(USERNAME, arr)
 }
 
 function retrieveStoredList(){
