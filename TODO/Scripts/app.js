@@ -2,7 +2,7 @@ import { TodoItem } from "./Classes/TodoItem.js";
 import { TodoList } from "./Classes/TodoList.js";
 import { GistDatabase } from "./Database.js";
 
-const db = new GistDatabase("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", "41515200e38db0c9f5c4e677e2846477")
+const db = new GistDatabase("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", "41515200e38db0c9f5c4e677e2846477")
 let USERNAME
 
 const CurrentTimeDisp = document.getElementById("cur-time");
@@ -41,7 +41,7 @@ function updateTime(){
 
 
 async function exportToDatabase(key, data){
-    db.set(key, data)
+    return await db.set(key, data)
 }
 
 function exportToLocalStorage(key, data){
@@ -53,10 +53,14 @@ async function importFromDatabase(key){
 }
 
 function importFromLocalStorage(key){
-    return localStorage.getItem(key)
+    const val = localStorage.getItem(key)
+    if (val){
+        return val
+    }
+    return []
 }
 
-function saveTodoList(){
+async function saveTodoList(){
     //parse items into array
     const arr = [];
     for (const item of todolist.items){
@@ -68,22 +72,29 @@ function saveTodoList(){
         return
     }
 
-    exportToDatabase(USERNAME, arr)
+    console.log("export")
+    await exportToDatabase(USERNAME, arr)
 }
 
-function retrieveStoredList(){
-    let arr = localStorage.getItem(KEY);
-    if (arr == null) return;
-    arr = JSON.parse(arr);
+async function retrieveStoredList(){
+    let arr
+    if (!USERNAME) {
+        arr = JSON.parse(importFromLocalStorage(KEY))
+    } else {
+        console.log("importing");
+        const data = await importFromDatabase(USERNAME)
+        arr = data != null ? data : []
+    }
+
     for (const str of arr){
-        const item = createItem(str.replace("-comp", ""));
+        const item = createItem(str.replace("-comp", ""), true);
         if (str.includes("-com")){
             item.oncomplete()
         }
     }
 }
 
-function createItem(value){
+function createItem(value, isStart){
     const item = new TodoItem(value != null ? value : todoInput.value);
 
     todolist.addTodoItem(item);
@@ -104,7 +115,7 @@ function createItem(value){
         item.node.style.backgroundColor = "rgb(52, 204, 93, .5)"
     });
 
-    saveTodoList();
+    if (!isStart) saveTodoList();
 
     return item;
 }
@@ -130,8 +141,8 @@ e("popup-cancel").addEventListener("click", ()=>{
     hidePopup()
 });
 
-window.addEventListener("beforeunload", ()=>{
-    saveTodoList();
+window.addEventListener("beforeunload", async ()=>{
+    await saveTodoList();
 });
 
 updateTime();

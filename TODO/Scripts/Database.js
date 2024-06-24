@@ -55,6 +55,28 @@ export class GistDatabase{
         return req.json()
     }
 
+    
+    /**Removes the specified key from the database
+     * 
+     * @param {*} key 
+     */
+    async remove(key){
+        key += ".json"
+
+        const req = await fetch(this.FETCH_URL, {
+            method: "PATCH",
+            headers: {
+                Authorization: `Bearer ${this.TOKEN}`
+            },
+            body: JSON.stringify({
+                files: {
+                    [key]: null
+                }
+            })
+        })
+        return req.json()
+    }
+
     /** @deprecated
      * Sets the raw value of the JSON file to the value of the data parameter
      * 
