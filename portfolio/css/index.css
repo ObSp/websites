@@ -10,6 +10,16 @@ body {
     overflow-x: hidden;
 
     font-family: Pixelated;
+
+    background-color: #b1dcc7;
+}
+
+html {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 /*WELCOME*/
@@ -136,6 +146,96 @@ body {
         mix-blend-mode: difference;
 
         width: 5vh;
+    }
+}
+
+#past-work {
+    width: 100vw;
+    height: fit-content;
+
+    margin: 0;
+
+    background-color: #b1dcc7;
+}
+
+.past-work-item {
+    width: 60vw;
+    height: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 5vh;
+
+    background-color: #497c64;
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 6px;
+
+        width: 100%;
+
+        color: whitesmoke;
+
+        font-size: 4vh;
+        font-weight: lighter;
+    }
+
+    a {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        width: 100%;
+
+        color: whitesmoke;
+
+        font-size: 4vh;
+        font-weight: lighter;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: calc(1vw);
+
+        color: whitesmoke;
+        font-size: 3vh;
+
+    }
+}
+
+#RGT-item {
+    background-image: url("../media/RGTIcon.webp");
+    background-repeat: no-repeat;
+    background-size: calc(70vh * (768/432)) 70vh;
+    background-position-x: 50%;
+    background-position-y: 50%;
+}
+
+.past-work-embed {
+    width: 100%;
+}
+
+.past-work-item-cover-container {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    background-color: #497c64;
+}
+
+.past-work-item-footer {
+    width: 100%;
+    height: fit-content;
+
+    background-color: #497c64;
+
+    h1 {
+        margin-left: 6px;
+    }
+
+    p {
+        font-weight:100;
     }
 }
 

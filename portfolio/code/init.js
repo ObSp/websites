@@ -4,5 +4,5 @@ import { send } from "./modules/sendCommision.js";
 import { fixStyles } from "./modules/stylesFixer.js";
 
 fixStyles()
-customScroll()
+//customScroll()
 init()
